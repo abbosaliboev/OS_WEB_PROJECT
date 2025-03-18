@@ -1,2 +1,2 @@
 # OS_WEB_PROJECT
-OpenSource Web Project
+Open Source Web Software Project
