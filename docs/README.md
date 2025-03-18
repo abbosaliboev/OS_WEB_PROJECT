@@ -226,5 +226,4 @@ const handleImageUpload = async () => {
 
 Following these steps will help you build a well-structured frontend! 🚀
 
-If you have any questions, feel free to ask! 🔥
 
