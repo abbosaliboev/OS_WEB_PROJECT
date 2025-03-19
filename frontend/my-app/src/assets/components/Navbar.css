@@ -1,0 +1,10 @@
+.navbar {
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+.navbar .nav-link {
+  color: white;
+}
+.navbar .nav-link:hover {
+  color: #dc3545;
+}/*# sourceMappingURL=Navbar.css.map */

@@ -1,0 +1,14 @@
+@import "../variables";
+
+.navbar {
+    background-color: $primary;
+    padding: 10px 20px;
+  
+    .nav-link {
+      color: white;
+      &:hover {
+        color: $danger;
+      }
+    }
+  }
+  
