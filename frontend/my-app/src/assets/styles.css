@@ -9,6 +9,53 @@
   color: #dc3545;
 }
 
+.login-container {
+  background-color: #f8f9fa;
+}
+.login-container .login-left {
+  background: #dbe3ec;
+  text-align: center;
+}
+.login-container .login-left .worker {
+  width: 70%;
+  margin-bottom: 10px;
+}
+.login-container .login-left .logo {
+  width: 20%;
+}
+.login-container .login-left p {
+  font-size: 1.5rem;
+  color: #666;
+}
+.login-container .login-right {
+  background: white;
+  text-align: center;
+}
+.login-container .login-right h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+.login-container .login-right form .form-control {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: rgba(102, 102, 102, 0.0666666667);
+  border: 0;
+}
+.login-container .login-right form .btn-dark {
+  padding: 12px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+.login-container .login-right form .support {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .login-container .login-left {
+    display: none !important;
+  }
+}
 .container {
   max-width: 1200px;
   margin: auto;
