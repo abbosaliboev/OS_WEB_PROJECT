@@ -1,14 +1,38 @@
+@charset "UTF-8";
 .navbar {
-  background-color: #007bff;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px !important;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+  height: 60px;
 }
-.navbar .nav-link {
-  color: white;
+.navbar .navbar-title {
+  font-size: 20px;
+  font-weight: bold;
 }
-.navbar .nav-link:hover {
-  color: #dc3545;
+.navbar .navbar-icons {
+  display: flex;
+  gap: 15px;
+}
+.navbar .navbar-icons .icon {
+  font-size: 24px;
+  cursor: pointer;
 }
 
+/* 📱 Mobil ekranda navbar elementlarini kichiklashtiramiz */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+  .navbar-title {
+    font-size: 18px;
+  }
+  .navbar-icons .icon {
+    font-size: 16px;
+  }
+}
 .login-container {
   background-color: #f8f9fa;
 }
@@ -57,6 +81,106 @@
 @media (max-width: 768px) {
   .login-container .login-left {
     display: none !important;
+  }
+}
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+}
+.sidebar .sidebar-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.sidebar .sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.sidebar .sidebar-menu li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+.sidebar .sidebar-menu li:hover {
+  background: #333;
+}
+.sidebar .sidebar-menu li svg {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.sidebar .sidebar-footer {
+  margin-top: auto;
+  padding-bottom: 40px;
+}
+.sidebar .sidebar-footer .user-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .sidebar-footer .user-link .user-icon {
+  font-size: 32px;
+  color: white;
+}
+
+/* 📱 Mobil display */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background: #dbe3ec;
+  height: calc(100vh - 60px);
+}
+.card-grid .card {
+  background: white;
+  height: 150px;
+  border-radius: 8px;
+}
+
+/* 📱 Planshet uchun (2 ta karta chiqadi) */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* 📱 Telefon uchun (1 ta karta chiqadi) */
+@media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* 📱 Mobil layout*/
+@media (max-width: 480px) {
+  .layout {
+    flex-direction: column;
   }
 }
 .container {

@@ -1,0 +1,17 @@
+.layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  /* 📱 Mobil layout*/
+  @media (max-width: 480px) {
+    .layout {
+      flex-direction: column;
+    }
+  }
