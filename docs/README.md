@@ -165,7 +165,7 @@ export const fetchData = async () => {
 4️⃣ **Use React Router for navigation.**  
 5️⃣ **Prepare API services for backend integration.**  
 
-
+<requirement>
 
 
 
