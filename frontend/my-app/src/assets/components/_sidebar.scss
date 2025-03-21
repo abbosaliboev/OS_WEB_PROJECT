@@ -7,13 +7,13 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    transition: width 0.3s ease;
-  
+    transition: transform 0.3s ease-in-out;
+
     .sidebar-logo {
       font-size: 24px;
       font-weight: bold;
     }
-  
+
     .sidebar-menu {
       list-style: none;
       padding: 0;
@@ -21,28 +21,28 @@
       
       li {
         display: flex;
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
         padding: 20px 10px;
         text-align: center;
         font-size: 14px;
         cursor: pointer;
-  
+
         &:hover {
           background: #333;
         }
 
         svg {
-          font-size: 32px; 
-          margin-bottom: 8px; 
+          font-size: 32px;
+          margin-bottom: 8px;
         }
       }
     }
-  
+
     .sidebar-footer {
       margin-top: auto;
       padding-bottom: 40px;
-  
+
       .user-link {
         display: flex;
         flex-direction: column;
@@ -55,14 +55,42 @@
         }
       }
     }
-      
-  }
-  
-  /* 📱 Mobil display */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 60px; ;
-    }
-  }
-  
+}
 
+/* 📱 Mobil versiyada sidebarni yashirish */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* 📌 Yashirilgan holat */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    background: black;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* 📌 Sidebar ochilganda (className="open" bo‘lsa) */
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* 📌 Mobil versiyada sidebarni ochish tugmasi */
+.menu-btn {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1100;
+  display: none; /* 📌 Faqat kichik ekranda chiqadi */
+
+  @media (max-width: 768px) {
+    display: block; /* 📌 Mobil ekranda tugma chiqadi */
+  }
+}

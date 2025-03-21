@@ -92,7 +92,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-  transition: width 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 .sidebar .sidebar-logo {
   font-size: 24px;
@@ -134,12 +134,43 @@
   color: white;
 }
 
-/* 📱 Mobil display */
+/* 📱 Mobil versiyada sidebarni yashirish */
 @media (max-width: 768px) {
   .sidebar {
-    width: 60px;
+    transform: translateX(-100%); /* 📌 Yashirilgan holat */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    background: black;
+    transition: transform 0.3s ease-in-out;
+  }
+  /* 📌 Sidebar ochilganda (className="open" bo‘lsa) */
+  .sidebar.open {
+    transform: translateX(0);
   }
 }
+/* 📌 Mobil versiyada sidebarni ochish tugmasi */
+.menu-btn {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1100;
+  display: none; /* 📌 Faqat kichik ekranda chiqadi */
+}
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block; /* 📌 Mobil ekranda tugma chiqadi */
+  }
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
