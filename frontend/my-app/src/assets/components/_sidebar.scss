@@ -19,6 +19,7 @@
       padding: 0;
       margin-top: 20px;
       
+      
       li {
         display: flex;
         flex-direction: column;
@@ -57,40 +58,74 @@
     }
 }
 
+.sidebar.open {
+    transform: translateX(0);
+    width: 200px; // ✅ Sidebar ochilganda kengayadi
+    align-items: flex-start; // elementlar chapga tortiladi
+    padding-left: 20px;
+  }
+
 /* 📱 Mobil versiyada sidebarni yashirish */
 @media (max-width: 768px) {
   .sidebar {
+    width: 0;
     transform: translateX(-100%); /* 📌 Yashirilgan holat */
     position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
     z-index: 1000;
-    background: black;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
+
+    .sidebar-menu li {
+        flex-direction: row;
+        gap: 10px;
+    }
   }
 
   /* 📌 Sidebar ochilganda (className="open" bo‘lsa) */
   .sidebar.open {
     transform: translateX(0);
+    width: 250px;
   }
 }
 
-/* 📌 Mobil versiyada sidebarni ochish tugmasi */
+/* Overlay: sidebar ochilganda fonni qoraytirish */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5); // Qoraytirish
+    z-index: 999; // Sidebardan past, lekin sahifadan yuqori
+  }
+  
+  /* Sidebar uchun z-index 1000 yoki undan katta bo‘lishi kerak */
+  .sidebar {
+    z-index: 1000;
+    // ... other styles
+  }
+  
 .menu-btn {
-  position: fixed;
-  left: 15px;
-  top: 15px;
-  background: black;
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 1100;
-  display: none; /* 📌 Faqat kichik ekranda chiqadi */
-
-  @media (max-width: 768px) {
-    display: block; /* 📌 Mobil ekranda tugma chiqadi */
+    position: fixed;
+    left: 5px;
+    top: 2px;
+    background: transparent;
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1100;
+    transition: left 0.1s ease-in-out; // 🔁 Yana yumshoq o‘tish uchun
+  
+    @media (max-width: 768px) {
+      display: block;
+    }
+  
+    &.open {
+      left: 200px; // 🔁 Sidebar 80px bo‘lsa, bu qiymat undan biroz katta bo‘lishi kerak
+      color: white;
+      background-color: black;
+      width: 50px;
+      top: 0;
+    }
   }
-}

@@ -134,41 +134,72 @@
   color: white;
 }
 
+.sidebar.open {
+  transform: translateX(0);
+  width: 200px;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
 /* 📱 Mobil versiyada sidebarni yashirish */
 @media (max-width: 768px) {
   .sidebar {
+    width: 0;
     transform: translateX(-100%); /* 📌 Yashirilgan holat */
     position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
     z-index: 1000;
-    background: black;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
+  }
+  .sidebar .sidebar-menu li {
+    flex-direction: row;
+    gap: 10px;
   }
   /* 📌 Sidebar ochilganda (className="open" bo‘lsa) */
   .sidebar.open {
     transform: translateX(0);
+    width: 250px;
   }
 }
-/* 📌 Mobil versiyada sidebarni ochish tugmasi */
+/* Overlay: sidebar ochilganda fonni qoraytirish */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Sidebar uchun z-index 1000 yoki undan katta bo‘lishi kerak */
+.sidebar {
+  z-index: 1000;
+}
+
 .menu-btn {
   position: fixed;
-  left: 15px;
-  top: 15px;
-  background: black;
-  color: white;
+  left: 5px;
+  top: 2px;
+  background: transparent;
+  color: black;
   border: none;
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
   z-index: 1100;
-  display: none; /* 📌 Faqat kichik ekranda chiqadi */
+  transition: left 0.1s ease-in-out;
 }
 @media (max-width: 768px) {
   .menu-btn {
-    display: block; /* 📌 Mobil ekranda tugma chiqadi */
+    display: block;
   }
+}
+.menu-btn.open {
+  left: 200px;
+  color: white;
+  background-color: black;
+  width: 50px;
+  top: 0;
 }
 
 .card-grid {
