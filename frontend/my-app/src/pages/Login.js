@@ -10,7 +10,7 @@ const Login = () => {
         <div className="col-md-6 login-left d-flex flex-column align-items-center justify-content-center">
           <img src={worker} alt="Worker Icon" className="img-fluid worker" />
           <img src={logo} alt="AI COMS Logo" className="img-fluid logo" />
-          <p>Factory Safety Monitoring Systems</p>
+          <p>Smart-Manufacturing Safety Monitoring System</p>
         </div>
 
         {/* Right */}

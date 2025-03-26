@@ -32,7 +32,7 @@
 
     form {
       .form-control {
-        padding: 12px;
+        padding: 12px 18px;
         border-radius: 8px;
         background-color: #66666611;
         border: 0;
@@ -45,6 +45,10 @@
       }
       .support{
         text-decoration: none;
+      
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
   }

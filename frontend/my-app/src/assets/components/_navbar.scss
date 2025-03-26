@@ -1,14 +1,40 @@
-@import "../variables";
-
 .navbar {
-    background-color: $primary;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px !important;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+  height: 80px;
   
-    .nav-link {
-      color: white;
-      &:hover {
-        color: $danger;
-      }
+  .navbar-title {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .navbar-icons {
+    display: flex;
+    gap: 20px;
+
+    .icon {
+      font-size: 24px;
+      cursor: pointer;
     }
   }
-  
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 80px;
+    .navbar-title {
+      font-size: 24px;
+    }    
+    .navbar-title {
+      padding-left: 30px;
+    }
+    .navbar-icons .icon {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,10 +1,17 @@
 import React from "react";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import CardGrid from "../components/CardGrid";
+import "../assets/components/_home.scss"; 
 
 const Home = () => {
   return (
-    <div className="container">
-      <h1>Welcome to Our DEMO Page</h1>
-      <p>Testing Mode</p>
+    <div className="layout">
+      <Sidebar />
+      <div className="main-content">
+        <Navbar />
+        <CardGrid />
+      </div>
     </div>
   );
 };

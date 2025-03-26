@@ -1,14 +1,40 @@
+@charset "UTF-8";
 .navbar {
-  background-color: #007bff;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px !important;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+  height: 80px;
 }
-.navbar .nav-link {
-  color: white;
+.navbar .navbar-title {
+  font-size: 32px;
+  font-weight: bold;
 }
-.navbar .nav-link:hover {
-  color: #dc3545;
+.navbar .navbar-icons {
+  display: flex;
+  gap: 20px;
+}
+.navbar .navbar-icons .icon {
+  font-size: 24px;
+  cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    height: 80px;
+  }
+  .navbar .navbar-title {
+    font-size: 24px;
+  }
+  .navbar .navbar-title {
+    padding-left: 30px;
+  }
+  .navbar .navbar-icons .icon {
+    font-size: 20px;
+  }
+}
 .login-container {
   background-color: #f8f9fa;
 }
@@ -37,7 +63,7 @@
   color: #2b2b2b;
 }
 .login-container .login-right form .form-control {
-  padding: 12px;
+  padding: 12px 18px;
   border-radius: 8px;
   background-color: rgba(102, 102, 102, 0.0666666667);
   border: 0;
@@ -50,10 +76,169 @@
 .login-container .login-right form .support {
   text-decoration: none;
 }
+.login-container .login-right form .support:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 768px) {
   .login-container .login-left {
     display: none !important;
+  }
+}
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.sidebar .sidebar-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.sidebar .sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.sidebar .sidebar-menu li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+.sidebar .sidebar-menu li:hover {
+  background: #333;
+}
+.sidebar .sidebar-menu li svg {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.sidebar .sidebar-footer {
+  margin-top: auto;
+  padding-bottom: 40px;
+}
+.sidebar .sidebar-footer .user-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .sidebar-footer .user-link .user-icon {
+  font-size: 32px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    overflow: hidden;
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 1000;
+  }
+  .sidebar .sidebar-menu li {
+    flex-direction: row;
+    gap: 10px;
+    padding: 20px 24px;
+  }
+  .sidebar .sidebar-logo {
+    padding: 0px 20px;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    width: 200px;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  .sidebar-footer {
+    padding: 0px 20px;
+  }
+}
+.menu-btn {
+  display: none;
+  position: fixed;
+  left: 5%;
+  top: 1%;
+  background: transparent;
+  color: black;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+}
+.menu-btn.open {
+  left: 200px;
+  color: white;
+  background-color: black;
+  width: 50px;
+  top: 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 60px 30px;
+  background: #dbe3ec;
+  height: calc(100vh - 60px);
+}
+.card-grid .card {
+  background: white;
+  height: 500px;
+  border-radius: 18px;
+}
+
+@media (max-width: 1400px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* 📱 Mobil layout*/
+@media (max-width: 480px) {
+  .layout {
+    flex-direction: column;
   }
 }
 .container {
