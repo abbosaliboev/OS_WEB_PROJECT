@@ -7,7 +7,6 @@
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
-    transition: transform 0.3s ease-in-out;
 
     .sidebar-logo {
       font-size: 24px;
@@ -58,37 +57,27 @@
     }
 }
 
-.sidebar.open {
-    transform: translateX(0);
-    width: 200px; // ✅ Sidebar ochilganda kengayadi
-    align-items: flex-start; // elementlar chapga tortiladi
-    padding-left: 20px;
-  }
+
 
 /* 📱 Mobil versiyada sidebarni yashirish */
 @media (max-width: 768px) {
+    
   .sidebar {
-    width: 0;
+    overflow: hidden;
     transform: translateX(-100%); /* 📌 Yashirilgan holat */
     position: fixed;
     z-index: 1000;
-    transition: transform 0.1s ease-in-out;
-
+    
     .sidebar-menu li {
         flex-direction: row;
         gap: 10px;
+        padding: 20px 24px;
     }
+    .sidebar-logo {
+        padding: 0px 20px;
+      }
   }
-
-  /* 📌 Sidebar ochilganda (className="open" bo‘lsa) */
-  .sidebar.open {
-    transform: translateX(0);
-    width: 250px;
-  }
-}
-
-/* Overlay: sidebar ochilganda fonni qoraytirish */
-.overlay {
+  .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -97,14 +86,21 @@
     background-color: rgba(0, 0, 0, 0.5); // Qoraytirish
     z-index: 999; // Sidebardan past, lekin sahifadan yuqori
   }
-  
-  /* Sidebar uchun z-index 1000 yoki undan katta bo‘lishi kerak */
-  .sidebar {
-    z-index: 1000;
-    // ... other styles
+  .sidebar.open {
+    transform: translateX(0);
+    width: 200px; // ✅ Sidebar ochilganda kengayadi
+    align-items: flex-start; // elementlar chapga tortiladi
+    padding-left: 20px;
+  }
+  .sidebar-footer{
+    padding: 0px 20px;
   }
   
+}
+
+
 .menu-btn {
+    display: none;
     position: fixed;
     left: 5px;
     top: 2px;
@@ -115,14 +111,13 @@
     font-size: 20px;
     cursor: pointer;
     z-index: 1100;
-    transition: left 0.1s ease-in-out; // 🔁 Yana yumshoq o‘tish uchun
   
     @media (max-width: 768px) {
       display: block;
     }
   
     &.open {
-      left: 200px; // 🔁 Sidebar 80px bo‘lsa, bu qiymat undan biroz katta bo‘lishi kerak
+      left: 200px; 
       color: white;
       background-color: black;
       width: 50px;
