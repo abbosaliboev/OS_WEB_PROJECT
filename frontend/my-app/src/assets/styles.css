@@ -6,31 +6,33 @@
   padding: 10px 40px !important;
   background: white;
   border-bottom: 2px solid #e0e0e0;
-  height: 60px;
+  height: 80px;
 }
 .navbar .navbar-title {
-  font-size: 20px;
+  font-size: 32px;
   font-weight: bold;
 }
 .navbar .navbar-icons {
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 .navbar .navbar-icons .icon {
   font-size: 24px;
   cursor: pointer;
 }
 
-/* 📱 Mobil ekranda navbar elementlarini kichiklashtiramiz */
 @media (max-width: 768px) {
   .navbar {
-    padding: 8px 15px;
+    height: 80px;
   }
-  .navbar-title {
-    font-size: 18px;
+  .navbar .navbar-title {
+    font-size: 24px;
   }
-  .navbar-icons .icon {
-    font-size: 16px;
+  .navbar .navbar-title {
+    padding-left: 30px;
+  }
+  .navbar .navbar-icons .icon {
+    font-size: 20px;
   }
 }
 .login-container {
@@ -133,11 +135,10 @@
   color: white;
 }
 
-/* 📱 Mobil versiyada sidebarni yashirish */
 @media (max-width: 768px) {
   .sidebar {
     overflow: hidden;
-    transform: translateX(-100%); /* 📌 Yashirilgan holat */
+    transform: translateX(-100%);
     position: fixed;
     z-index: 1000;
   }
@@ -171,8 +172,8 @@
 .menu-btn {
   display: none;
   position: fixed;
-  left: 5px;
-  top: 2px;
+  left: 5%;
+  top: 1%;
   background: transparent;
   color: black;
   border: none;
@@ -197,24 +198,27 @@
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+  gap: 30px;
+  padding: 60px 30px;
   background: #dbe3ec;
   height: calc(100vh - 60px);
 }
 .card-grid .card {
   background: white;
-  height: 150px;
-  border-radius: 8px;
+  height: 500px;
+  border-radius: 18px;
 }
 
-/* 📱 Planshet uchun (2 ta karta chiqadi) */
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* 📱 Telefon uchun (1 ta karta chiqadi) */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @media (max-width: 576px) {
   .card-grid {
     grid-template-columns: repeat(1, 1fr);

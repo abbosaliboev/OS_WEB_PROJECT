@@ -1,29 +1,33 @@
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    background: #dbe3ec;
-    height: calc(100vh - 60px);
-  
-    .card {
-      background: white;
-      height: 150px;
-      border-radius: 8px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 60px 30px;
+  background: #dbe3ec;
+  height: calc(100vh - 60px);
+
+  .card {
+    background: white;
+    height: 500px;
+    border-radius: 18px;
   }
-  
-  /* 📱 Planshet uchun (2 ta karta chiqadi) */
-  @media (max-width: 992px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+
+@media (max-width: 1400px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* 📱 Telefon uchun (1 ta karta chiqadi) */
-  @media (max-width: 576px) {
+}
+
+@media (max-width: 992px) {
     .card-grid {
       grid-template-columns: repeat(1, 1fr);
     }
   }
-  
+
+@media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

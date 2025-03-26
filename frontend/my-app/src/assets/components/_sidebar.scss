@@ -59,12 +59,11 @@
 
 
 
-/* 📱 Mobil versiyada sidebarni yashirish */
 @media (max-width: 768px) {
     
   .sidebar {
     overflow: hidden;
-    transform: translateX(-100%); /* 📌 Yashirilgan holat */
+    transform: translateX(-100%); 
     position: fixed;
     z-index: 1000;
     
@@ -83,13 +82,13 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5); // Qoraytirish
-    z-index: 999; // Sidebardan past, lekin sahifadan yuqori
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
   }
   .sidebar.open {
     transform: translateX(0);
-    width: 200px; // ✅ Sidebar ochilganda kengayadi
-    align-items: flex-start; // elementlar chapga tortiladi
+    width: 200px; 
+    align-items: flex-start; 
     padding-left: 20px;
   }
   .sidebar-footer{
@@ -102,8 +101,8 @@
 .menu-btn {
     display: none;
     position: fixed;
-    left: 5px;
-    top: 2px;
+    left: 5%;
+    top: 1%;
     background: transparent;
     color: black;
     border: none;
