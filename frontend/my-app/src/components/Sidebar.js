@@ -8,7 +8,6 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* 📌 Mobil versiyada sidebarni ochish tugmasi */}
     <button className={`menu-btn ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes /> : <FaBars />}
     </button>
@@ -16,7 +15,6 @@ const Sidebar = () => {
     {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}></div>}
 
 
-      {/* 📌 Sidebar (agar `isOpen` true bo‘lsa, chiqadi) */}
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-logo"><img src={aiLogo} alt="ai-logo"/></div>
         <ul className="sidebar-menu">
