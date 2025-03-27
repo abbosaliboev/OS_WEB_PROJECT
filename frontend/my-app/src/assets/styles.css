@@ -243,6 +243,7 @@
   text-align: center;
   padding: 4px;
   color: white;
+  font-weight: bold;
 }
 .card-grid .card .safe {
   background-color: #1ab64f;
@@ -291,7 +292,7 @@
 @media (max-width: 1500px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 30px 30px;
+    padding: 30px;
   }
 }
 @media (max-width: 992px) {

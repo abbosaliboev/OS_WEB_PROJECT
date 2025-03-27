@@ -38,8 +38,10 @@
         text-align: center;
         padding: 4px;
         color: white;
+        font-weight: bold;
       }
   
+      // Status colors
       .safe {
         background-color: #1ab64f;
       }
@@ -67,16 +69,18 @@
         font-size: 20px;
         font-weight: bold;
         background: #f1f1f1;
-        
-        .record{
-            margin-right: 30px;
-
-            img {
-                width: 50px;
-                height: 20px;
-            }
+  
+        // Optional recording indicator (toggle by condition)
+        .record {
+          margin-right: 30px;
+  
+          img {
+            width: 50px;
+            height: 20px;
+          }
         }
   
+        // Color indicator dots
         .dot {
           width: 14px;
           height: 14px;
@@ -94,21 +98,24 @@
     }
   }
   
+  // Adjust for medium screens
   @media (max-width: 1500px) {
     .card-grid {
       grid-template-columns: repeat(2, 1fr);
-      padding: 30px 30px;
+      padding: 30px;
     }
   }
   
+  // Center and limit single column layout on tablets
   @media (max-width: 992px) {
     .card-grid {
       grid-template-columns: repeat(1, 1fr);
-      max-width: 600px; // ✅ Prevent stretching too wide on large screens
-      margin: 0 auto;   // ✅ Center the single card
+      max-width: 600px;
+      margin: 0 auto;
     }
   }
   
+  // Compact layout for small devices
   @media (max-width: 576px) {
     .card-grid {
       padding: 15px;
@@ -129,15 +136,15 @@
         .card-right {
           font-size: 12px;
           gap: 6px;
-            
-            .record{
-                margin-right: 10px;
-                
-                img {
-                    width: 30px;
-                    height: 14px;
-                }
+  
+          .record {
+            margin-right: 10px;
+  
+            img {
+              width: 30px;
+              height: 14px;
             }
+          }
         }
   
         .status-bar {
@@ -151,4 +158,3 @@
       }
     }
   }
-  
