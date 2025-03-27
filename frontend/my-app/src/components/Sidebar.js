@@ -1,30 +1,61 @@
-import React, { useState } from "react";
+// Sidebar.js
+import React, { useState, useEffect } from "react";
 import "../assets/components/_sidebar.scss";
-import { FaBars, FaTimes, FaHome, FaChartPie, FaClock, FaArchive, FaFileAlt, FaInfoCircle, FaUser } from "react-icons/fa"; // React-icons
-import aiLogo from "../assets/images/ai-logo.png"; // images link
+import {
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaChartPie,
+  FaClock,
+  FaArchive,
+  FaFileAlt,
+  FaInfoCircle,
+  FaUser,
+} from "react-icons/fa";
+import aiLogo from "../assets/images/ai-logo.png";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false); // Sidebar ochiq-yopiq holati
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("home");
+
+  const menuItems = [
+    { key: "home", label: "Home", icon: <FaHome /> },
+    { key: "summary", label: "Summary", icon: <FaChartPie /> },
+    { key: "timeline", label: "Timeline", icon: <FaClock /> },
+    { key: "archive", label: "Archive", icon: <FaArchive /> },
+    { key: "report", label: "Report", icon: <FaFileAlt /> },
+    { key: "info", label: "Info", icon: <FaInfoCircle /> },
+  ];
 
   return (
     <>
-    <button className={`menu-btn ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className={`menu-btn ${isOpen ? "open" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         {isOpen ? <FaTimes /> : <FaBars />}
-    </button>
+      </button>
 
-    {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}></div>}
-
+      {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}></div>}
 
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-logo"><img src={aiLogo} alt="ai-logo"/></div>
+        <div className="sidebar-logo">
+          <img src={aiLogo} alt="ai-logo" />
+        </div>
+
         <ul className="sidebar-menu">
-          <li><FaHome /><span>Home</span></li>
-          <li><FaChartPie /><span>Summary</span></li>
-          <li><FaClock /><span>Timeline</span></li>
-          <li><FaArchive /><span>Archive</span></li>
-          <li><FaFileAlt /><span>Report</span></li>
-          <li><FaInfoCircle /><span>Info</span></li>
+          {menuItems.map((item) => (
+            <li
+              key={item.key}
+              className={activeItem === item.key ? "active" : ""}
+              onClick={() => setActiveItem(item.key)}
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </li>
+          ))}
         </ul>
+
         <div className="sidebar-footer">
           <a href="/login" className="user-link">
             <FaUser className="user-icon" />

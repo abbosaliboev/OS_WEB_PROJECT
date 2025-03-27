@@ -35,9 +35,19 @@
           font-size: 38px;
           margin-bottom: 8px;
         }
+
+        &.active { 
+            background: #555;
+            color: #ffffff;
+            font-weight: bold;
+      
+            svg {
+              color: white;
+            }
+          }
       }
     }
-  
+      
     .sidebar-footer {
       margin-top: auto;
       padding-bottom: 40px;
@@ -125,4 +135,3 @@
       top: 0;
     }
   }
-  

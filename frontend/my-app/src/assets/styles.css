@@ -120,6 +120,14 @@
   font-size: 38px;
   margin-bottom: 8px;
 }
+.sidebar .sidebar-menu li.active {
+  background: #555;
+  color: #ffffff;
+  font-weight: bold;
+}
+.sidebar .sidebar-menu li.active svg {
+  color: white;
+}
 .sidebar .sidebar-footer {
   margin-top: auto;
   padding-bottom: 40px;
