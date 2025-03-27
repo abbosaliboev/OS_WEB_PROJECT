@@ -185,7 +185,7 @@
   display: none;
   position: absolute;
   left: 5%;
-  top: 4px;
+  top: 2px;
   background: transparent;
   color: black;
   border: none;
@@ -213,12 +213,79 @@
   gap: 30px;
   padding: 60px 30px;
   background: #dbe3ec;
-  height: calc(100vh - 60px);
+  height: auto;
 }
 .card-grid .card {
   background: white;
-  height: 520px;
   border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.card-grid .card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 18px;
+  color: black;
+}
+.card-grid .card .card-left {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  gap: 60px;
+}
+.card-grid .card .card-left .cam-label {
+  font-weight: bold;
+}
+.card-grid .card .status-bar {
+  text-align: center;
+  padding: 4px;
+  color: white;
+}
+.card-grid .card .safe {
+  background-color: #1ab64f;
+}
+.card-grid .card .danger {
+  background-color: #e53935;
+}
+.card-grid .card .warning {
+  background-color: #f4a300;
+}
+.card-grid .card .video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+}
+.card-grid .card .card-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #f1f1f1;
+}
+.card-grid .card .card-right .record {
+  margin-right: 30px;
+}
+.card-grid .card .card-right .record img {
+  width: 50px;
+  height: 20px;
+}
+.card-grid .card .card-right .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.card-grid .card .card-right .dot.orange {
+  background-color: orange;
+}
+.card-grid .card .card-right .dot.red {
+  background-color: red;
 }
 
 @media (max-width: 1500px) {
@@ -230,14 +297,42 @@
 @media (max-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(1, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 576px) {
   .card-grid {
-    grid-template-columns: repeat(1, 1fr);
+    padding: 15px;
   }
   .card-grid .card {
-    height: 220px;
+    height: 230px;
+  }
+  .card-grid .card .card-header {
+    padding: 6px 12px;
+    gap: 4px;
+  }
+  .card-grid .card .card-left {
+    font-size: 14px;
+    gap: 20px;
+  }
+  .card-grid .card .card-right {
+    font-size: 12px;
+    gap: 6px;
+  }
+  .card-grid .card .card-right .record {
+    margin-right: 10px;
+  }
+  .card-grid .card .card-right .record img {
+    width: 30px;
+    height: 14px;
+  }
+  .card-grid .card .status-bar {
+    padding: 2px;
+    font-size: 14px;
+  }
+  .card-grid .card .video {
+    height: 180px;
   }
 }
 .layout {
@@ -249,6 +344,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  background: #dbe3ec;
 }
 
 /* 📱 Mobil layout*/
