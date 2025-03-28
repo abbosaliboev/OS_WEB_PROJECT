@@ -158,13 +158,6 @@ export const fetchData = async () => {
 
 ---
 
-## **Summary**
-1️⃣ **Create a React project (`npx create-react-app`).**  
-2️⃣ **Organize files (`components`, `pages`, `assets/scss`).**  
-3️⃣ **Install and configure Bootstrap & SASS.**  
-4️⃣ **Use React Router for navigation.**  
-5️⃣ **Prepare API services for backend integration.**  
-
 
 
 
