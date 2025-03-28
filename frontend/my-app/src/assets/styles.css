@@ -207,6 +207,11 @@
   top: 0;
 }
 
+.card-grid-wrapper {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -304,10 +309,10 @@
 }
 @media (max-width: 576px) {
   .card-grid {
-    padding: 15px;
+    padding: 4px 10px;
   }
   .card-grid .card {
-    height: 230px;
+    height: 220px;
   }
   .card-grid .card .card-header {
     padding: 6px 12px;

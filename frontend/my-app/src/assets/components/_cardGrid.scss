@@ -1,4 +1,9 @@
 // _cardGrid.scss
+.card-grid-wrapper {
+    height: calc(100vh - 80px); // Adjust for navbar height
+    overflow-y: auto;
+}
+  
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -118,10 +123,10 @@
   // Compact layout for small devices
   @media (max-width: 576px) {
     .card-grid {
-      padding: 15px;
+      padding: 4px 10px;
   
       .card {
-        height: 230px;
+        height: 220px;
   
         .card-header {
           padding: 6px 12px;

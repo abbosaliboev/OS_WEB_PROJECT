@@ -16,38 +16,40 @@ const CardGrid = () => {
   ];
 
   return (
-    <div className="card-grid">
-      {cardData.map((card) => (
-        <div key={card.id} className="card">
+    <div className="card-grid-wrapper">
+        <div className="card-grid">
+        {cardData.map((card) => (
+            <div key={card.id} className="card">
 
-          {/* 🔹 Top bar with CAM name and stats */}
-          <div className="card-header">
-            <div className="card-left">
-              <span className="cam-label">{card.cam}</span>
-              <span className="time">{card.time}</span>
-            </div>
-
-            <div className="card-right">
-              {/* 🔴 Show recording icon conditionally */}
-              {(card.status === "Danger" || card.status === "Warning") && (
-                <div className="record">
-                  <img src={recLogo} alt="record" />
+            {/* 🔹 Top bar with CAM name and stats */}
+            <div className="card-header">
+                <div className="card-left">
+                <span className="cam-label">{card.cam}</span>
+                <span className="time">{card.time}</span>
                 </div>
-              )}
-              <div className="dot orange"></div>
-              <span>{card.safe}</span>
-              <div className="dot red"></div>
-              <span>{card.danger}</span>
+
+                <div className="card-right">
+                {/* 🔴 Show recording icon conditionally */}
+                {(card.status === "Danger" || card.status === "Warning") && (
+                    <div className="record">
+                    <img src={recLogo} alt="record" />
+                    </div>
+                )}
+                <div className="dot orange"></div>
+                <span>{card.safe}</span>
+                <div className="dot red"></div>
+                <span>{card.danger}</span>
+                </div>
             </div>
-          </div>
 
-          {/* 🔹 Status tag */}
-          <div className={`status-bar ${card.status.toLowerCase()}`}>{card.status}</div>
+            {/* 🔹 Status tag */}
+            <div className={`status-bar ${card.status.toLowerCase()}`}>{card.status}</div>
 
-          {/* 🔹 Video preview */}
-          <video className="video" src={sampleVideo} muted autoPlay loop></video>
+            {/* 🔹 Video preview */}
+            <video className="video" src={sampleVideo} muted autoPlay loop></video>
+            </div>
+        ))}
         </div>
-      ))}
     </div>
   );
 };
