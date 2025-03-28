@@ -12,6 +12,10 @@
   font-size: 32px;
   font-weight: bold;
 }
+.navbar .navbar-logo {
+  font-size: 24px;
+  margin: 0;
+}
 .navbar .navbar-icons {
   display: flex;
   gap: 20px;
@@ -27,6 +31,9 @@
   }
   .navbar .navbar-title {
     font-size: 24px;
+  }
+  .navbar .navbar-logo {
+    display: none;
   }
   .navbar .navbar-title {
     padding-left: 30px;
@@ -309,13 +316,13 @@
 }
 @media (max-width: 576px) {
   .card-grid {
-    padding: 4px 10px;
+    padding: 18px;
   }
   .card-grid .card {
     height: 220px;
   }
   .card-grid .card .card-header {
-    padding: 6px 12px;
+    padding: 4px 12px;
     gap: 4px;
   }
   .card-grid .card .card-left {

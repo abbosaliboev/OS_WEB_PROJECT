@@ -11,7 +11,10 @@
     font-size: 32px;
     font-weight: bold;
   }
-
+  .navbar-logo{
+    font-size: 24px;
+    margin: 0;
+  }
   .navbar-icons {
     display: flex;
     gap: 20px;
@@ -29,7 +32,10 @@
     height: 60px;
     .navbar-title {
       font-size: 24px;
-    }    
+    }
+    .navbar-logo{
+      display: none;
+    }
     .navbar-title {
       padding-left: 30px;
     }
