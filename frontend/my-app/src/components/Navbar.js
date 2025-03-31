@@ -9,9 +9,9 @@ const Navbar = () => {
       <span className="navbar-title">Home</span>
       <h1 className="navbar-logo">Factory Monitoring System</h1>
       <div className="navbar-icons">
-        <FaRedo className="icon" />
-        <FaGlobe className="icon" />
-        <FaCog className="icon" />
+        <FaRedo className="icon" /> {/* Refresh icon */}
+        <FaGlobe className="icon" /> {/* Language icon */}
+        <FaCog className="icon" /> {/* Settings icon */}
       </div>
     </nav>
   );

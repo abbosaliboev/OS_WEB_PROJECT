@@ -1,5 +1,6 @@
 // Sidebar.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/components/_sidebar.scss";
 import {
   FaBars,
@@ -17,6 +18,7 @@ import aiLogo from "../assets/images/ai-logo.png";
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("home");
+  const navigate = useNavigate();
 
   const menuItems = [
     { key: "home", label: "Home", icon: <FaHome /> },
@@ -26,6 +28,12 @@ const Sidebar = () => {
     { key: "report", label: "Report", icon: <FaFileAlt /> },
     { key: "info", label: "Info", icon: <FaInfoCircle /> },
   ];
+
+  const handleMenuClick = (item) => {
+    setActiveItem(item.key);
+    setIsOpen(false); // close sidebar
+    navigate(`/Summary`); // go to page
+  };
 
   return (
     <>
@@ -48,7 +56,7 @@ const Sidebar = () => {
             <li
               key={item.key}
               className={activeItem === item.key ? "active" : ""}
-              onClick={() => setActiveItem(item.key)}
+              onClick={() => handleMenuClick(item)}
             >
               {item.icon}
               <span>{item.label}</span>
