@@ -41,10 +41,10 @@
   }
 }
 .login-container {
-  background-color: #dbe3ec;
+  background-color: #cbd8e7;
 }
 .login-container .login-left {
-  background-color: #dbe3ec;
+  background-color: #cbd8e7;
 }
 .login-container .login-left p {
   font-size: 1.3rem;
@@ -190,7 +190,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background: #dbe3ec;
+  background: #cbd8e7;
 }
 
 /* 📱 Mobil layout*/
@@ -228,7 +228,7 @@
 
 .content-wrapper {
   min-height: calc(100vh - 80px);
-  background-color: #dbe3ec;
+  background-color: #cbd8e7;
 }
 
 .navbar-title {
