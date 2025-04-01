@@ -50,7 +50,7 @@ const CardGrid = () => {
 
                 <div className="d-flex align-items-center gap-2 fw-bold">
                   {(card.status === "Danger" || card.status === "Warning") && (
-                    <div className="record me-2">
+                    <div className="record me-1">
                       <img src={recLogo} alt="record" />
                     </div>
                   )}
