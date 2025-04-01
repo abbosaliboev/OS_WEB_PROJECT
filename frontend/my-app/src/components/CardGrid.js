@@ -35,7 +35,7 @@ const CardGrid = () => {
     <div className="container-fluid py-4 card-grid-wrapper">
       <div className="row g-4">
         {cardData.map((card) => (
-          <div key={card.id} className="col-12 col-lg-6 col-xl-4">
+          <div key={card.id} className="col-12 col-sm-6 col-lg-6 col-xl-4">
             <div
               className="card h-100 shadow-sm overflow-hidden"
               onClick={() => handleCardClick(card.id)}

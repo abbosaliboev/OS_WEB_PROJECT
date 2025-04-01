@@ -44,52 +44,20 @@
   background-color: #dbe3ec;
 }
 .login-container .login-left {
-  background: #dbe3ec;
-  text-align: center;
-}
-.login-container .login-left .worker {
-  width: 70%;
-  margin-bottom: 10px;
-}
-.login-container .login-left .logo {
-  width: 20%;
+  background-color: #dbe3ec;
 }
 .login-container .login-left p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #666;
 }
-.login-container .login-right {
-  background: white;
-  text-align: center;
+.login-container .login-form {
+  width: 100%;
+  max-width: 400px;
 }
-.login-container .login-right h2 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #2b2b2b;
-}
-.login-container .login-right form .form-control {
-  padding: 12px 18px;
-  border-radius: 8px;
-  background-color: rgba(102, 102, 102, 0.0666666667);
-  border: 0;
-}
-.login-container .login-right form .btn-dark {
-  padding: 12px;
-  border-radius: 16px;
-  font-size: 18px;
-}
-.login-container .login-right form .support {
-  text-decoration: none;
-}
-.login-container .login-right form .support:hover {
+.login-container .support:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .login-container .login-left {
-    display: none !important;
-  }
-}
 .sidebar {
   width: 120px;
   min-height: 100vh;
@@ -120,6 +88,17 @@
   }
 }
 
+@media (max-width: 768px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -128,6 +107,7 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fade-slide 0.6s ease-in-out;
+  border: 0 !important;
 }
 .card .card-header {
   padding: 4px 26px;
@@ -263,4 +243,29 @@
 .icon {
   font-size: 20px;
   cursor: pointer;
+}
+
+.dark-mode .navbar {
+  background-color: #000 !important;
+  color: white;
+  border-bottom: 2px solid #333333 !important;
+}
+.dark-mode .navbar .navbar-title,
+.dark-mode .navbar .navbar-logo,
+.dark-mode .navbar .navbar-icons .icon {
+  color: white !important;
+}
+.dark-mode .card-header {
+  background-color: #e2e3e9 !important;
+}
+.dark-mode .sidebar {
+  background-color: #000 !important;
+  color: white;
+}
+.dark-mode .content-wrapper {
+  background-color: #1a1d2a !important;
+  color: white;
+}
+.dark-mode .main-content {
+  background-color: #41455c;
 }/*# sourceMappingURL=styles.css.map */

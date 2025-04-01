@@ -18,7 +18,7 @@
   
     img {
       border-radius: 8px;
-    }
+    } 
   
     @media (max-width: 768px) {
       position: fixed;
@@ -28,6 +28,18 @@
       height: 100vh;
       background-color: #000;
       width: 200px;
+
     }
   }
-  
+
+  @media (max-width: 768px) {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.5); // semi-transparent black
+        z-index: 1040;
+      }
+  }

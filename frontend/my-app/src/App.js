@@ -20,38 +20,38 @@ import Login from "./pages/Login";
 import SettingsPage from "./pages/SettingPage";
 
 // Layout component (main wrapper with navbar + sidebar)
-function AppLayout({ isAuthenticated, setIsAuthenticated }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false); // sidebar toggle state
-  const [activePage, setActivePage] = useState("Home");  // current page title
-  const [refreshKey, setRefreshKey] = useState(0);       // used for refresh trigger
+function AppLayout({ isAuthenticated, setIsAuthenticated, isDarkMode, setIsDarkMode }) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activePage, setActivePage] = useState("Home");
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
 
-  // Triggers a re-render of the current page (e.g., Home)
   const handleRefreshMain = () => {
     setRefreshKey((prev) => prev + 1);
   };
 
-  // If user is not logged in and not on login page, redirect to login
   if (!isAuthenticated && !isLoginPage) {
     return <Navigate to="/login" />;
   }
 
   return (
-    <div className="d-flex">
-      {/* Sidebar is hidden on login page */}
+    <div className={`d-flex ${isDarkMode ? "dark-mode" : ""}`}>
+      {/* Sidebar */}
       {!isLoginPage && (
         <div className={`sidebar-wrapper ${sidebarOpen ? "d-block" : "d-none"} d-md-block`}>
-          <Sidebar
-            toggleSidebar={setSidebarOpen}
-            setActivePage={setActivePage}
-          />
+          <Sidebar toggleSidebar={setSidebarOpen} setActivePage={setActivePage} />
         </div>
       )}
 
+      {/* Overlay for mobile */}
+      {sidebarOpen && !isLoginPage && (
+        <div className="overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+
       <div className="flex-grow-1">
-        {/* Navbar is hidden on login page */}
+        {/* Navbar */}
         {!isLoginPage && (
           <Navbar
             onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
@@ -62,17 +62,12 @@ function AppLayout({ isAuthenticated, setIsAuthenticated }) {
 
         <div className="content-wrapper">
           <Routes>
-            {/* Main home page (refreshKey used for refresh logic) */}
             <Route path="/" element={<Home key={refreshKey} />} />
-
-            {/* Login page - pass setIsAuthenticated as a prop */}
+            <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
             <Route
-              path="/login"
-              element={<Login setIsAuthenticated={setIsAuthenticated} />}
+              path="/settings"
+              element={<SettingsPage isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}
             />
-
-            {/* Settings page (protected) */}
-            <Route path="/settings" element={<SettingsPage />} />
           </Routes>
         </div>
       </div>
@@ -82,13 +77,16 @@ function AppLayout({ isAuthenticated, setIsAuthenticated }) {
 
 // Root component of the app
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // track login status
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // dark mode state
 
   return (
     <Router>
       <AppLayout
         isAuthenticated={isAuthenticated}
         setIsAuthenticated={setIsAuthenticated}
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
       />
     </Router>
   );

@@ -2,63 +2,22 @@
   background-color: $background-color;
 
   .login-left {
-    background: $background-color;
-    text-align: center;
-    
-    .worker {
-      width: 70%;
-      margin-bottom: 10px;
-    }
-
-    .logo{
-        width: 20%;
-    }
+    background-color: $background-color;
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #666;
     }
   }
 
-  .login-right {
-    background: white;
-    text-align: center;
-    
-    h2 {
-      font-size: 32px;
-      font-weight: bold;
-      color: $secondary-color;
-    }
-
-    form {
-      .form-control {
-        padding: 12px 18px;
-        border-radius: 8px;
-        background-color: #66666611;
-        border: 0;
-      }
-
-      .btn-dark {
-        padding: 12px;
-        border-radius: 16px;
-        font-size: 18px;
-      }
-      .support{
-        text-decoration: none;
-      
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-    }
+  .login-form {
+    width: 100%;
+    max-width: 400px; // ✅ max width limit
   }
-}
 
-// Responsive design
-@media (max-width: 768px) {
-  .login-container {
-    .login-left {
-      display: none !important;
+  .support {
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

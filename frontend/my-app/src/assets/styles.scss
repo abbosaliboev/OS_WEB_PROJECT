@@ -50,3 +50,31 @@
   font-size: 20px;
   cursor: pointer;
 }
+.dark-mode {
+  .navbar {
+    background-color: #000 !important;
+    color: white;
+    border-bottom: 2px solid #333333 !important;
+    .navbar-title,
+    .navbar-logo,
+    .navbar-icons .icon {
+      color: white !important;
+    }
+  }
+  .card-header {
+    background-color: #e2e3e9 !important;
+  }
+  .sidebar {
+    background-color: #000 !important;
+    color: white;
+  }
+
+  .content-wrapper {
+    background-color: #1a1d2a !important;
+    color: white;
+  }
+  .main-content {
+    background-color: #41455c;
+  }
+}
+
