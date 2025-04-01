@@ -1,10 +1,7 @@
 // Sidebar.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../assets/components/_sidebar.scss";
 import {
-  FaBars,
-  FaTimes,
   FaHome,
   FaChartPie,
   FaClock,
@@ -14,63 +11,56 @@ import {
   FaUser,
 } from "react-icons/fa";
 import aiLogo from "../assets/images/ai-logo.png";
+import "../assets/components/_sidebar.scss";
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Sidebar = ({ toggleSidebar, setActivePage }) => {
   const [activeItem, setActiveItem] = useState("home");
   const navigate = useNavigate();
 
   const menuItems = [
-    { key: "home", label: "Home", icon: <FaHome /> },
-    { key: "summary", label: "Summary", icon: <FaChartPie /> },
-    { key: "timeline", label: "Timeline", icon: <FaClock /> },
-    { key: "archive", label: "Archive", icon: <FaArchive /> },
-    { key: "report", label: "Report", icon: <FaFileAlt /> },
-    { key: "info", label: "Info", icon: <FaInfoCircle /> },
+    { key: "home", label: "Home", icon: <FaHome />, path: "/" },
+    { key: "summary", label: "Summary", icon: <FaChartPie />, path: "/summary" },
+    { key: "timeline", label: "Timeline", icon: <FaClock />, path: "/timeline" },
+    { key: "archive", label: "Archive", icon: <FaArchive />, path: "/archive" },
+    { key: "report", label: "Report", icon: <FaFileAlt />, path: "/report" },
+    { key: "info", label: "Info", icon: <FaInfoCircle />, path: "/info" },
   ];
 
   const handleMenuClick = (item) => {
     setActiveItem(item.key);
-    setIsOpen(false); // close sidebar
-    navigate(`/Summary`); // go to page
+    setActivePage(item.label); // Update active page in Navbar
+    toggleSidebar(false); // close sidebar on mobile
+    navigate(item.path);
   };
 
   return (
-    <>
-      <button
-        className={`menu-btn ${isOpen ? "open" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </button>
+    <div className="bg-dark text-white py-3 vh-100 sidebar">
+      <div className="text-center mb-3">
+        <img src={aiLogo} alt="logo" width="50" className="rounded" />
+      </div>
 
-      {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}></div>}
-
-      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-logo">
-          <img src={aiLogo} alt="ai-logo" />
-        </div>
-
-        <ul className="sidebar-menu">
-          {menuItems.map((item) => (
-            <li
-              key={item.key}
-              className={activeItem === item.key ? "active" : ""}
-              onClick={() => handleMenuClick(item)}
-            >
+      <ul className="nav flex-column text-center">
+        {menuItems.map((item) => (
+          <li
+            key={item.key}
+            className={`nav-item py-3 ${activeItem === item.key ? "bg-secondary" : ""}`}
+            style={{ cursor: "pointer" }}
+            onClick={() => handleMenuClick(item)}
+          >
+            <div className="d-flex flex-column align-items-center">
               {item.icon}
-              <span>{item.label}</span>
-            </li>
-          ))}
-        </ul>
+              <span className="mt-1">{item.label}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
 
-        <div className="sidebar-footer">
-          <a href="/login" className="user-link">
-            <FaUser className="user-icon" />
-          </a>
-        </div>
-      </aside>
-    </>
+      <div className="mt-auto text-center pt-4 mb-3">
+        <a href="/login" className="text-white">
+          <FaUser size={28} />
+        </a>
+      </div>
+    </div>
   );
 };
 

@@ -1,13 +1,15 @@
+@import '../_variables.scss';
+
 .layout {
     display: flex;
-    height: 100vh;
+    height: calc(100vh - 80px);
   }
   
   .main-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    background: #dbe3ec;
+    background: $background-color;
   }
   
   /* 📱 Mobil layout*/

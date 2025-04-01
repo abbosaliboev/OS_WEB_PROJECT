@@ -17,4 +17,36 @@
 .container {
     max-width: 1200px;
     margin: auto;
+}
+.sidebar-wrapper {
+  width: 120px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    height: 100vh;
+    background-color: #000;
   }
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 80px);
+  background-color: $background-color;
+}
+
+.navbar-title {
+  font-size: 18px;
+}
+
+.navbar-logo {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
