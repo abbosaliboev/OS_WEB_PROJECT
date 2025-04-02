@@ -32,6 +32,9 @@
   }
 }
 
+.card-grid-wrapper {
+  padding: 2%;
+}
 .content-wrapper {
   min-height: calc(100vh - 80px);
   background-color: $background-color;
@@ -50,6 +53,7 @@
   font-size: 20px;
   cursor: pointer;
 }
+
 .dark-mode {
   .navbar {
     background-color: #000 !important;

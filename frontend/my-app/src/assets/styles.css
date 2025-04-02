@@ -226,6 +226,10 @@
   }
 }
 
+.card-grid-wrapper {
+  padding: 2%;
+}
+
 .content-wrapper {
   min-height: calc(100vh - 80px);
   background-color: #cbd8e7;
