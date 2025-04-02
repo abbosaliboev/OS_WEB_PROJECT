@@ -272,4 +272,7 @@
 }
 .dark-mode .main-content {
   background-color: #41455c;
+}
+.dark-mode .menu-toggle {
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
