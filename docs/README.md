@@ -28,33 +28,37 @@ npm start
 
 ## **2️⃣ Project Structure**
 ```
-/frontend
- ├── /my-app
- │   ├── /public        # Static assets (images, icons)
- │   ├── /src
- │   │   ├── /components  # Reusable UI components
- │   │   │   ├── /Navbar   # Navbar component
- │   │   │   │   ├── Navbar.js
- │   │   │   │   ├── Navbar.scss
- │   │   │   ├── /Footer   # Footer component
- │   │   │   │   ├── Footer.js
- │   │   │   │   ├── Footer.scss
- │   │   │   ├── /Button   # Reusable button component
- │   │   │   │   ├── Button.js
- │   │   │   │   ├── Button.scss
- │   │   ├── /pages       # Page components
- │   │   ├── /assets      # Styles and resources
- │   │   │   ├── /scss       # SASS files
- │   │   │   │   ├── /components         # Components styles
- │   │   │   │   │   ├──Navbar         # Navbar  
- │   │   │   │   ├── _variables.scss  # Bootstrap overrides
- │   │   │   │   ├── _global.scss     # Global styles
- │   │   │   │   ├──  styles.scss     # Main SASS file (imports all partials)
- │   │   ├── /services    # API requests
- │   │   ├── App.js       # Main App component
- │   │   ├── index.js     # Root file
- │   ├── package.json     # React dependencies
- │   ├── .gitignore       # Ignore file for Git
+/frontend                          # Root folder of the frontend part
+└── /my-app                        # Main React project folder (created with create-react-app)
+    ├── /public                   # Static assets accessible in public URL (e.g., index.html, icons, images)
+    
+    ├── /src                      # Source code folder (main development happens here)
+    │   ├── /components           # Reusable UI components (React components)
+    │   │   ├── Navbar.js         # Top navigation bar component
+    │   │   ├── Footer.js         # Footer component
+    │   │   ├── CardGrid.js       # Component for displaying cards in grid format
+
+    │   ├── /pages                # Page-level components (like Home, Login, Settings)
+                                  # Each file represents a route or view
+
+    │   ├── /assets               # Folder for styling and other resources
+    │   │   ├── /scss             # SASS styles directory
+    │   │   │   ├── /components   # SASS styles specific to components
+    │   │   │   │   ├── _navbar.scss     # Styles for Navbar component
+    │   │   │   │   ├── _cardGrid.scss   # Styles for CardGrid component
+    │   │   │   │   ├── _sidebarscss     # (Probably meant to be _sidebar.scss)
+    │   │   │   ├── _variables.scss      # Bootstrap overrides or custom variables
+    │   │   │   ├── _global.scss         # Global styles (fonts, body reset, etc.)
+    │   │   │   ├── styles.scss          # Main SASS file importing all partials
+
+    │   ├── /services           # For API logic (e.g., Axios calls, endpoints)
+    
+    │   ├── App.js              # Main App component, where routes and layout are defined
+    │   ├── index.js            # Entry point of the React app, renders <App /> to the DOM
+
+    ├── package.json            # Project metadata and dependency list
+    ├── .gitignore              # Specifies files/folders to ignore in Git version control
+
 ```
 
 ---
@@ -157,15 +161,5 @@ export const fetchData = async () => {
 ```
 
 ---
-
-## **Summary**
-1️⃣ **Create a React project (`npx create-react-app`).**  
-2️⃣ **Organize files (`components`, `pages`, `assets/scss`).**  
-3️⃣ **Install and configure Bootstrap & SASS.**  
-4️⃣ **Use React Router for navigation.**  
-5️⃣ **Prepare API services for backend integration.**  
-
-
-
 
 
