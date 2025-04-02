@@ -41,7 +41,7 @@ const Login = ({ setIsAuthenticated }) => {
         <div className="col-md-6 d-flex flex-column align-items-center justify-content-center text-center bg-white p-4">
           <h2 className="mb-4 fw-bold">Login Account</h2>
 
-          {error && <div className="alert alert-danger w-100 text-center">{error}</div>}
+          {error && <div className="alert alert-danger w-25 text-center">{error}</div>}
 
           <form className="login-form" onSubmit={handleSubmit}>
             <input
