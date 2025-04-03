@@ -30,17 +30,13 @@ npm start
 ```
 /frontend                          # Root folder of the frontend part
 └── /my-app                        # Main React project folder (created with create-react-app)
-    ├── /public                   # Static assets accessible in public URL (e.g., index.html, icons, images)
-    
+    ├── /public                   # Static assets accessible in public URL (e.g., index.html, icons, images)  
     ├── /src                      # Source code folder (main development happens here)
     │   ├── /components           # Reusable UI components (React components)
     │   │   ├── Navbar.js         # Top navigation bar component
     │   │   ├── Footer.js         # Footer component
     │   │   ├── CardGrid.js       # Component for displaying cards in grid format
-
     │   ├── /pages                # Page-level components (like Home, Login, Settings)
-                                  # Each file represents a route or view
-
     │   ├── /assets               # Folder for styling and other resources
     │   │   ├── /scss             # SASS styles directory
     │   │   │   ├── /components   # SASS styles specific to components
@@ -50,12 +46,9 @@ npm start
     │   │   │   ├── _variables.scss      # Bootstrap overrides or custom variables
     │   │   │   ├── _global.scss         # Global styles (fonts, body reset, etc.)
     │   │   │   ├── styles.scss          # Main SASS file importing all partials
-
     │   ├── /services           # For API logic (e.g., Axios calls, endpoints)
-    
     │   ├── App.js              # Main App component, where routes and layout are defined
     │   ├── index.js            # Entry point of the React app, renders <App /> to the DOM
-
     ├── package.json            # Project metadata and dependency list
     ├── .gitignore              # Specifies files/folders to ignore in Git version control
 
