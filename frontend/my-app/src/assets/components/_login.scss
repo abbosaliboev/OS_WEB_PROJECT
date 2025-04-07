@@ -1,8 +1,10 @@
+@use '../variables' ;
+
 .login-container {
-  background-color: $background-color;
+  background-color: variables.$background-color;
 
   .login-left {
-    background-color: $background-color;
+    background-color: variables.$background-color;
 
     p {
       font-size: 1.3rem;
