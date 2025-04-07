@@ -1,4 +1,4 @@
-@import '../_variables.scss';
+@use '../_variables.scss';
 
 .card {
     display: flex;
@@ -12,7 +12,7 @@
   
     .card-header {
       padding: 4px 26px;
-      background-color: $white;
+      background-color: variables.$white;
       font-size: 20px;
       .time{
         font-size: 14px;
@@ -23,13 +23,13 @@
       padding: 2px;
       font-size: 15px;
       &.safe {
-        background-color: $safe;
+        background-color: variables.$safe;
       }
       &.danger {
-        background-color: $danger;
+        background-color: variables.$danger;
       }
       &.warning {
-        background-color: $warning;
+        background-color: variables.$warning;
       }
     }
   
@@ -45,10 +45,10 @@
       height: 12px;
       border-radius: 50%;
       &.orange {
-        background-color: $warning;
+        background-color: variables.$warning;
       }
       &.red {
-        background-color: $danger;
+        background-color: variables.$danger;
       }
     }
   

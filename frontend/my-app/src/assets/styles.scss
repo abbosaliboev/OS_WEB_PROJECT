@@ -1,11 +1,11 @@
-@import "variables";  
-@import "global";    
-@import "components/navbar"; 
-@import "components/login"; 
+@use "./variables";  
+@use "./global";    
+@use "components/navbar"; 
+@use "components/login"; 
 
-@import "components/sidebar";
-@import "components/cardGrid";
-@import "components/home";
+@use "components/sidebar";
+@use "components/cardGrid";
+@use "components/home";
 
 
 *{
@@ -37,7 +37,7 @@
 }
 .content-wrapper {
   min-height: calc(100vh - 80px);
-  background-color: $background-color;
+  background-color: variables.$background-color;
 }
 
 .navbar-title {
