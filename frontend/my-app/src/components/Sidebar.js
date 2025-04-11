@@ -10,7 +10,7 @@ import {
   FaInfoCircle,
   FaUser,
 } from "react-icons/fa";
-import aiLogo from "../assets/images/ai-logo.png";
+import aiLogo from "../assets/icons/ai-logo.png";
 import "../assets/components/_sidebar.scss";
 
 const Sidebar = ({ toggleSidebar, setActivePage }) => {

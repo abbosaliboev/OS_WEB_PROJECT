@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import {
   BrowserRouter as Router,
@@ -18,20 +17,29 @@ import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SettingsPage from "./pages/SettingPage";
+import Camera from "./pages/Camera";
 
-// Layout component (main wrapper with navbar + sidebar)
+// Layout wrapper for all pages except Login
 function AppLayout({ isAuthenticated, setIsAuthenticated, isDarkMode, setIsDarkMode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activePage, setActivePage] = useState("Home");
-  const [refreshKey, setRefreshKey] = useState(0);
+  const [homeRefreshKey, setHomeRefreshKey] = useState(0);
+  const [cameraRefreshKey, setCameraRefreshKey] = useState(0);
+  
 
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
 
+  // Only refresh current page when Refresh button clicked
   const handleRefreshMain = () => {
-    setRefreshKey((prev) => prev + 1);
+    if (location.pathname === "/") {
+      setHomeRefreshKey((prev) => prev + 1);
+    } else if (location.pathname.startsWith("/camera")) {
+      setCameraRefreshKey((prev) => prev + 1);
+    }
   };
 
+  // Redirect to login if not authenticated
   if (!isAuthenticated && !isLoginPage) {
     return <Navigate to="/login" />;
   }
@@ -45,7 +53,7 @@ function AppLayout({ isAuthenticated, setIsAuthenticated, isDarkMode, setIsDarkM
         </div>
       )}
 
-      {/* Overlay for mobile */}
+      {/* Overlay for mobile sidebar */}
       {sidebarOpen && !isLoginPage && (
         <div className="overlay" onClick={() => setSidebarOpen(false)} />
       )}
@@ -60,25 +68,28 @@ function AppLayout({ isAuthenticated, setIsAuthenticated, isDarkMode, setIsDarkM
           />
         )}
 
+        {/* Page Content */}
         <div className="content-wrapper">
-          <Routes>
-            <Route path="/" element={<Home key={refreshKey} />} />
-            <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-            <Route
-              path="/settings"
-              element={<SettingsPage isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}
-            />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home key={homeRefreshKey} />} />
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+          <Route
+            path="/settings"
+            element={<SettingsPage isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}
+          />
+          <Route path="/camera/:id" element={<Camera key={cameraRefreshKey} />} />
+        </Routes>
+
         </div>
       </div>
     </div>
   );
 }
 
-// Root component of the app
+// Main App
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false); // dark mode state
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
     <Router>

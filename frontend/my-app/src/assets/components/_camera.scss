@@ -1,0 +1,106 @@
+// src/pages/CameraPage.scss
+@use '../_variables.scss';
+
+.camera-page {
+    animation: fade-slide 0.3s ease-in-out;
+
+    .alerts-card {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        height: 78vh;
+        display: flex;
+        flex-direction: column;
+      
+        .alert-filter {
+          flex-shrink: 0;
+        }
+      
+        .alert-list {
+          overflow-y: auto;
+          flex-grow: 1;
+          margin-top: 0.5rem;
+      
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE and Edge */
+        
+          &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+          }
+
+          .alert-item {
+            background-color: variables.$secondary-color;
+            border-radius: 8px;
+            cursor: pointer;
+      
+            &:hover {
+              background-color: variables.$background-color;
+            }
+      
+            span {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+      
+  
+    .video-section {
+      padding: 1rem;
+  
+      .filter-bar {
+        .form-control {
+          width: 60%;
+        }
+  
+        button {
+          border-radius: 10px;
+          margin-left: 0.5rem;
+        }
+      }
+  
+      .video-wrapper {
+        background: #000;
+        border-radius: 10px;
+        overflow: hidden;
+  
+        video {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+  
+      .playback-bar {
+        .timeline {
+          height: 8px;
+          background-color: #cfd8dc;
+          border-radius: 5px;
+          position: relative;
+  
+          .bar {
+            width: 30%;
+            height: 100%;
+            background-color: #007bff;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  
+    .info-sidebar {
+      padding: 1rem;
+  
+      .card {
+        border-radius: 15px;
+  
+        h6 {
+          margin-bottom: 0.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+  

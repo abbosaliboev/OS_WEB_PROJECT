@@ -11,7 +11,7 @@ import cctv5 from "../assets/videos/cctv5.mp4";
 import cctv6 from "../assets/videos/cctv6.mp4";
 
 // 📦 Recording indicator
-import recLogo from "../assets/images/rec.png";
+import recLogo from "../assets/icons/rec.png";
 
 const CardGrid = () => {
   const navigate = useNavigate();
