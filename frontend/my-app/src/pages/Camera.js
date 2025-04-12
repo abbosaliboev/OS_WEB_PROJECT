@@ -51,7 +51,33 @@ const Camera = () => {
 
         {/* Video */}
         <div className="col-12 col-lg-6">
-          <div className="video-section p-4">
+          <div className="buttons d-flex justify-content-between align-items-center mb-3">
+            {/* Data Filter */}
+            <div className="data-filter d-flex align-items-center gap-2">
+              <input
+                type="date"
+                className="form-control"
+                style={{ maxWidth: "200px" }}
+              />
+              <input
+                type="time"
+                className="form-control"
+                style={{ maxWidth: "150px" }}
+              />
+            </div>
+
+            {/* Photo / Video Toggle */}
+            <div className="photo-video-toggle d-flex gap-2">
+              <button className="btn btn-light">
+                <i className="bi bi-camera"></i>
+              </button>
+              <button className="btn btn-dark">
+                <i className="bi bi-camera-video-fill text-white"></i>
+              </button>
+            </div>
+          </div>
+
+          <div className="video-section p-4 bg-light">
             <img
               src="https://c4.wallpaperflare.com/wallpaper/35/579/807/tv-test-patterns-monoscope-wallpaper-preview.jpg"
               alt="Video"
@@ -70,50 +96,66 @@ const Camera = () => {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="col-12 col-lg-3">
           <div className="stats-section d-flex flex-column gap-3">
-            <div className="summary-card p-3 bg-dark text-white rounded">
-              <div className="d-flex justify-content-between align-items-center mb-2">
-                <span>Helmet</span>
-                <img src={helmetIcon} alt="Helmet" width={24} />
-              </div>
-              <div className="d-flex justify-content-between align-items-center mb-2">
-                <span>Vest</span>
-                <img src={vestIcon} alt="Vest" width={24} />
-              </div>
-              <div className="d-flex justify-content-between align-items-center mb-2">
-                <span>Fire</span>
-                <img src={fireIcon} alt="Fire" width={24} />
-              </div>
-              <div className="d-flex justify-content-between align-items-center">
-                <span>Fall</span>
-                <img src={fallIcon} alt="Fall" width={24} />
+
+            {/* ALERT */}
+            <div className="alert-box d-flex align-items-center justify-content-center">
+              <i className="bi bi-exclamation-triangle-fill me-2"></i>
+              <span>12 Alerts</span>
+            </div>
+
+            {/* SUMMARY CARD */}
+            <div className="summary-card p-3 rounded text-white">
+              <div className="row text-center">
+                <div className="col-6 mb-3">
+                  <div className="label">HELMET</div>
+                  <div className="count">7</div>
+                  <img src={helmetIcon} alt="Helmet" width={32} />
+                </div>
+                <div className="col-6 mb-3">
+                  <div className="label">VEST</div>
+                  <div className="count">5</div>
+                  <img src={vestIcon} alt="Vest" width={32} />
+                </div>
+                <div className="col-6">
+                  <div className="label">Fire</div>
+                  <div className="count">3</div>
+                  <img src={fireIcon} alt="Fire" width={32} />
+                </div>
+                <div className="col-6">
+                  <div className="label">Fall</div>
+                  <div className="count">2</div>
+                  <img src={fallIcon} alt="Fall" width={32} />
+                </div>
               </div>
             </div>
 
+            {/* LINE CHART */}
             <div className="chart p-3 bg-white rounded shadow-sm">
               <h6>Line Chart</h6>
               <img
-                src="/chart-placeholder.png"
+                src="https://storage.googleapis.com/dycr-web/image/topic/chartjs/v2/line-graph.png"
                 alt="chart"
                 className="img-fluid"
               />
             </div>
 
+            {/* DETECTIONS */}
             <div className="detections p-3 bg-white rounded shadow-sm">
-              <h6>Detections</h6>
-              <div className="d-flex justify-content-between">
+              <h6>DETECTIONS</h6>
+              <div className="detect-row d-flex justify-content-between mb-2">
                 <span>Worker ID: 03</span>
                 <span>9</span>
               </div>
-              <div className="d-flex justify-content-between">
+              <div className="detect-row d-flex justify-content-between">
                 <span>Worker ID: 02</span>
                 <span>3</span>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
