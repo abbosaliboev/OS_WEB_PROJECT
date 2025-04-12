@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import worker from "../assets/images/worker.png";
-import logo from "../assets/images/logo.png";
+import worker from "../assets/icons/worker.png";
+import logo from "../assets/icons/logo.png";
 
 const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");

@@ -24,7 +24,7 @@ const Navbar = ({ onToggleSidebar, onRefreshMain, activePage }) => {
       <button className="btn d-md-none me-3 menu-toggle" onClick={onToggleSidebar}>
         <FaBars />
       </button>
-
+      
       <span className="navbar-title">{activePage}</span>
       <h1 className="navbar-logo mx-auto">Factory Monitoring System</h1>
 
